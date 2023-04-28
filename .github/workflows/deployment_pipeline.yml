@@ -20,6 +20,7 @@ jobs:
         run: |
           npm install
           npm install react-scripts
+          npm install react-dom
       - name: lint
         run: npm run lint
       - name: build
