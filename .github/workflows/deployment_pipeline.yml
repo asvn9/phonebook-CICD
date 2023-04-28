@@ -23,9 +23,9 @@ jobs:
         run: |
           cd phonebook
           npm install
+          cd ..
       - name: Lint
         run: |
-          cd ..
           npm run lint
       - name: Build
         run: |
