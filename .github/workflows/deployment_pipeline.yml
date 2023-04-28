@@ -21,7 +21,7 @@ jobs:
           npm install
       - name: Install frontend dependencies
         run: |
-          cd phonebook-CICD/phonebook
+          cd phonebook
           npm install
       - name: Lint
         run: |
@@ -29,5 +29,5 @@ jobs:
           npm run lint
       - name: Build
         run: |
-          cd phonebook-CICD/phonebook
+          cd phonebook
           npm run build
