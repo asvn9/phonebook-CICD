@@ -17,7 +17,9 @@ jobs:
         with:
           node-version: "16"
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install react-scripts
       - name: lint
         run: npm run lint
       - name: build
