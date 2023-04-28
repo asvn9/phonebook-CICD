@@ -17,9 +17,12 @@ const baseUrl = '/api/persons'
         return axios.put(`${baseUrl}/${id}`, newObject)
       }
 
-    export default {
+      const numberMethods = {
         getAll: getAll,
         create: create,
         update: update,
         repla: repla
-    }
+      }
+      
+      export default numberMethods;
+      
