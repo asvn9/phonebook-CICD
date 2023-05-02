@@ -24,6 +24,9 @@ jobs:
           cd phonebook
           npm install
           cd ..
+      - name: Audit and fix dependencies
+        run: |
+          npm audit fix
       - name: Lint
         run: |
           npm run lint
