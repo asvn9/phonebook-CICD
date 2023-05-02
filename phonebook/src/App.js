@@ -16,7 +16,6 @@ const App = () => {
   const [showAll, setShowAll] = useState('')
 
   useEffect(() => {
-    console.log('effect')
     numberMethods
       .getAll()
       .then(response => {
