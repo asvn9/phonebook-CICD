@@ -10,6 +10,16 @@ PORT= 8080
 [experimental]
   auto_rollback = true
 
+[deploy]
+  release_command = "npm run build"
+
+[processes]
+  app = "node index.js"
+
+[build]
+  [build.args]
+    NODE_VERSION = "17.7.2"
+
 [[services]]
   http_checks = []
   internal_port = 8080
