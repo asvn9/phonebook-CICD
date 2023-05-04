@@ -40,17 +40,9 @@ jobs:
           command: npm run test:e2e
           start: npm run start
           wait-on: http://localhost:3001
-  deploy:
-    name: Deploy app 2
-    needs: [simple_deployment_pipeline]
-    runs-on: ubuntu-20.04
-    env:
-      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-      MONGODB_URI: ${{ secrets.MONGODB_URI }}
-    steps:
-      - uses: actions/checkout@v2
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      - name: Debug mongo
-        run: echo $MONGODB_URI
-      - name: Deploy app
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      - name: Deploy
         run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
