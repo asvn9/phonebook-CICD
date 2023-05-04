@@ -40,6 +40,10 @@ jobs:
           command: npm run test:e2e
           start: npm run start
           wait-on: http://localhost:3001
+      - name: Debugging
+        run: |
+          echo ${{ secrets.MONGODB_URI }}
+
   deploy:
     name: Deploy app 2
     needs: [simple_deployment_pipeline]
