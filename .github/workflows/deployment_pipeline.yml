@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
+      - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Install backend dependencies
         run: |
           npm install
@@ -42,7 +43,7 @@ jobs:
           wait-on: http://localhost:3001
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
-      - name: Deploy
+      - name: fly.io deployment
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
