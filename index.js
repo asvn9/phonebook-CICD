@@ -18,6 +18,12 @@ app.get('/api/persons', (req, res) => {
   })
 })
 
+app.get('/health', (req, res) => {
+  throw 'error...'
+  // eslint-disable-next-line no-unreachable
+  res.send('ok')
+})
+
 app.get('/info', (req, res) => {
   Phonebook.find({}).then(result => {
     res.send(`<p>Phonebook has info for ${result.length} people.</p><p>${new Date()}</p>`)
