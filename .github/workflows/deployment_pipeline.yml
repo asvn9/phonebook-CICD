@@ -41,7 +41,7 @@ jobs:
           start: npm run start
           wait-on: http://localhost:3001
   deploy:
-    name: Deploy app
+    name: Deploy app 2
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
