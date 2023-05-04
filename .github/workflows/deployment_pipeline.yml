@@ -51,6 +51,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Debug mongo
-        run: echo: $MONGODB_URI
+        run: echo $MONGODB_URI
       - name: Deploy app
         run: flyctl deploy --remote-only
