@@ -15,3 +15,12 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl secrets set MONGODB_URI=${MONGODB_URI}
       - run: flyctl deploy --remote-only
+  tag_release:
+    needs: [deploy]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: anothrNick/github-tag-action@1.55.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
