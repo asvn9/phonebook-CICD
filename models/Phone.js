@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const {MONGODB_URI} = process.env
+const url = process.env.MONGODB_URI
 
-console.log('connecting to', MONGODB_URI)
-mongoose.connect(MONGODB_URI)
+console.log('connecting to', url)
+mongoose.connect(url)
   .then(() => {
     console.log('connected to MongoDB')
   })
